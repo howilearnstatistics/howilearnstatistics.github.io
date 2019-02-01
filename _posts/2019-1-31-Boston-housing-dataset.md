@@ -49,7 +49,10 @@ Now we have our training set and testing set, let take a look at the correlation
 > cor_matrix<-cor(train)
 > corrplot(cor_matrix, method=”number”)
 ``` 
-![LSTM]({{ 'howilearnstatistics.github.io/_posts/boston-housing-dataset-1.png' | absolute_url }})
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 ```Rcor()``` function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression.
  
