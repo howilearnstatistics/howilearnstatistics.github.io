@@ -23,7 +23,7 @@ Our aim is to predict house value in Boston. Before we begin to do any analysis,
 ```R
 > any(is.na(Boston))  
 ``` 
-The function any(is.na()) will return TRUE if there is missing value in our dataset. in this case, the function returned FALSE. This is good, no missing value, we begin our analysis by splitting the dataset into two parts, training set and testing set, in this example we will randomly take 75% row in the Boston dataset and put it into the training set, and other 25% row in the testing set:
+The function ```Rany(is.na())``` will return TRUE if there is missing value in our dataset. in this case, the function returned ```RFALSE```. This is good, no missing value, we begin our analysis by splitting the dataset into two parts, training set and testing set, in this example we will randomly take 75% row in the Boston dataset and put it into the training set, and other 25% row in the testing set:
 ```R
 > data(Boston)
 > smp_size<-floor(0.75*nrow(Boston))
@@ -32,7 +32,7 @@ The function any(is.na()) will return TRUE if there is missing value in our data
 > train<-Boston[train_ind, ]
 > test<-Boston[-train_ind, ]
 ``` 
-floor() is used to return the largest integer value which is not greater than an individual number, or expression. For example:
+```Rfloor()``` is used to return the largest integer value which is not greater than an individual number, or expression. For example:
 ```R
 > floor(3.3)
 [1] 3
@@ -41,7 +41,7 @@ floor() is used to return the largest integer value which is not greater than an
 > floor(-4.3)
 [1] -5
 ``` 
-set.seed() is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
+```Rset.seed()``` is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
 
 Now we have our training set and testing set, let take a look at the correlation between variables in the training set, we do so by constructing a correlation matrix of the training set:
 ```R
@@ -49,7 +49,7 @@ Now we have our training set and testing set, let take a look at the correlation
 > cor_matrix<-cor(train)
 > corrplot(cor_matrix, method=”number”)
 ``` 
-cor() function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression.
+```Rcor()``` function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression.
  
 We begin to create our linear regression model:
 ```R
