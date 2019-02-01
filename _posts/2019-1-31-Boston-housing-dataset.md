@@ -10,10 +10,40 @@ The Boston housing dataset is included in the MASS library in R. First let inclu
 > Library(MASS)
 > Boston
 ```
-Then we call ```Rnames()```  function so we can access names of columns in the dataset:
+Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
 ```R
 > names(Boston)
+```
+```R
+ [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"     "dis"     "rad"    
+[10] "tax"     "ptratio" "black"   "lstat"   "medv"
+```
+```
+> summary(Boston)
 ``` 
+```
+  crim                zn             indus            chas              nox        
+ Min.   : 0.00632   Min.   :  0.00   Min.   : 0.46   Min.   :0.00000   Min.   :0.3850  
+ 1st Qu.: 0.08204   1st Qu.:  0.00   1st Qu.: 5.19   1st Qu.:0.00000   1st Qu.:0.4490  
+ Median : 0.25651   Median :  0.00   Median : 9.69   Median :0.00000   Median :0.5380  
+ Mean   : 3.61352   Mean   : 11.36   Mean   :11.14   Mean   :0.06917   Mean   :0.5547  
+ 3rd Qu.: 3.67708   3rd Qu.: 12.50   3rd Qu.:18.10   3rd Qu.:0.00000   3rd Qu.:0.6240  
+ Max.   :88.97620   Max.   :100.00   Max.   :27.74   Max.   :1.00000   Max.   :0.8710  
+       rm             age              dis              rad              tax           ptratio     
+ Min.   :3.561   Min.   :  2.90   Min.   : 1.130   Min.   : 1.000   Min.   :187.0   Min.   :12.60  
+ 1st Qu.:5.886   1st Qu.: 45.02   1st Qu.: 2.100   1st Qu.: 4.000   1st Qu.:279.0   1st Qu.:17.40  
+ Median :6.208   Median : 77.50   Median : 3.207   Median : 5.000   Median :330.0   Median :19.05  
+ Mean   :6.285   Mean   : 68.57   Mean   : 3.795   Mean   : 9.549   Mean   :408.2   Mean   :18.46  
+ 3rd Qu.:6.623   3rd Qu.: 94.08   3rd Qu.: 5.188   3rd Qu.:24.000   3rd Qu.:666.0   3rd Qu.:20.20  
+ Max.   :8.780   Max.   :100.00   Max.   :12.127   Max.   :24.000   Max.   :711.0   Max.   :22.00  
+     black            lstat            medv      
+ Min.   :  0.32   Min.   : 1.73   Min.   : 5.00  
+ 1st Qu.:375.38   1st Qu.: 6.95   1st Qu.:17.02  
+ Median :391.44   Median :11.36   Median :21.20  
+ Mean   :356.67   Mean   :12.65   Mean   :22.53  
+ 3rd Qu.:396.23   3rd Qu.:16.95   3rd Qu.:25.00  
+ Max.   :396.90   Max.   :37.97   Max.   :50.00  
+```
 As we can see, there are 14 columns, that means there are 13 predictors we can use to train our model. It’s not a healthy practice to use all of our predictors to train our model as it could cause overfitting, which predictor we should use and which we shouldn’t will be discussed in another example.
 To get familiar with descriptions of these predictors, we type:
 ```R
@@ -32,7 +62,7 @@ The function ```Rany(is.na())``` will return TRUE if there is missing value in o
 > train<-Boston[train_ind, ]
 > test<-Boston[-train_ind, ]
 ``` 
-```Rfloor()``` is used to return the largest integer value which is not greater than an individual number, or expression. For example:
+```floor()``` is used to return the largest integer value which is not greater than an individual number, or expression. For example:
 ```R
 > floor(3.3)
 [1] 3
@@ -41,7 +71,7 @@ The function ```Rany(is.na())``` will return TRUE if there is missing value in o
 > floor(-4.3)
 [1] -5
 ``` 
-```Rset.seed()``` is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
+```set.seed()``` is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
 
 Now we have our training set and testing set, let take a look at the correlation between variables in the training set, we do so by constructing a correlation matrix of the training set:
 ```R
