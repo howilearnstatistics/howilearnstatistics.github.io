@@ -112,7 +112,7 @@ Residual standard error: 6.273 on 377 degrees of freedom
 Multiple R-squared:  0.5601,	Adjusted R-squared:  0.5589 
 F-statistic:   480 on 1 and 377 DF,  p-value: < 2.2e-16
 ``` 
-Looks like rsme of our model is 6.273 on the training set, but that is not what we care about, what we care about is the rsme of our model on the test set:
+Looks like root mean squared error (rmse) of our model is 6.273 on the training set, but that is not what we care about, what we care about is the rsme of our model on the test set:
 ```R
 > require(Metrics)
 > evaluate<-predict(lm.fit, test) 
@@ -128,5 +128,5 @@ Let also plot our model:
 
 [logo3]: http://howilearnstatistics.github.io/images/boston-housing-dataset-3.png "lm.fit graph"
 
-```Rrmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next example we will learn how to select variables that best fit our model.
+```rmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next example we will learn how to select variables that best fit our model.
 
