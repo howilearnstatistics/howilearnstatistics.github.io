@@ -51,12 +51,15 @@ Now we have our training set and testing set, let take a look at the correlation
 ``` 
 ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: http://howilearnstatistics.github.io/images/boston-housing-dataset-1.png "Correlation Matrix"
 
 ```corrplot()``` function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression. We can also plot our variables to visualize our problem:
 ```
 > plot(lstat,medv)
 ```
+![alt text][logo]
+
+[logo]: http://howilearnstatistics.github.io/images/boston-housing-dataset-2.png "lstat-medv graph"
 
 We begin to create our linear regression model:
 ```R
@@ -91,7 +94,9 @@ Let also plot our model:
 > plot(lstat,medv)
 > abline(lm.fit)
 ```
+![alt text][logo]
 
+[logo]: http://howilearnstatistics.github.io/images/boston-housing-dataset-3.png "lm.fit graph"
 
 ```Rrmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next example we will learn how to select variables that best fit our model.
 
