@@ -57,9 +57,9 @@ Now we have our training set and testing set, let take a look at the correlation
 ```
 > plot(lstat,medv)
 ```
-![alt text][logo]
+![alt text][logo2]
 
-[logo]: http://howilearnstatistics.github.io/images/boston-housing-dataset-2.png "lstat-medv graph"
+[logo2]: http://howilearnstatistics.github.io/images/boston-housing-dataset-2.png "lstat-medv graph"
 
 We begin to create our linear regression model:
 ```R
@@ -94,9 +94,9 @@ Let also plot our model:
 > plot(lstat,medv)
 > abline(lm.fit)
 ```
-![alt text][logo]
+![alt text][logo3]
 
-[logo]: http://howilearnstatistics.github.io/images/boston-housing-dataset-3.png "lm.fit graph"
+[logo3]: http://howilearnstatistics.github.io/images/boston-housing-dataset-3.png "lm.fit graph"
 
 ```Rrmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next example we will learn how to select variables that best fit our model.
 
