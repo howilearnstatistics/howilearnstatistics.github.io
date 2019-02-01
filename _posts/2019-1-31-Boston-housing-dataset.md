@@ -13,15 +13,11 @@ The Boston housing dataset is included in the MASS library in R. First let inclu
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
 ```R
 > names(Boston)
+> summary(Boston)
 ```
-```R
+```
  [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"     "dis"     "rad"    
 [10] "tax"     "ptratio" "black"   "lstat"   "medv"
-```
-```
-> summary(Boston)
-``` 
-```
   crim                zn             indus            chas              nox        
  Min.   : 0.00632   Min.   :  0.00   Min.   : 0.46   Min.   :0.00000   Min.   :0.3850  
  1st Qu.: 0.08204   1st Qu.:  0.00   1st Qu.: 5.19   1st Qu.:0.00000   1st Qu.:0.4490  
