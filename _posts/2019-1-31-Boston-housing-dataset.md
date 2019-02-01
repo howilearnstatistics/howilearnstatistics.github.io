@@ -51,7 +51,7 @@ Now we have our training set and testing set, let take a look at the correlation
 ``` 
 ![alt text][logo]
 
-[logo]: https://howilearnstatistics.github.io/images/boston-housing-dataset-1.png"Correlation Matrix"
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 ```corrplot()``` function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression. We can also plot our variables to visualize our problem:
 ```
