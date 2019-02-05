@@ -1,7 +1,11 @@
-In this post we will discuss about t-statistics, F statistics and their role in the optimization of linear regression model. In the first part of this post we will talk about theory of t-statistics, F statistics and in the second part we will practice it with real datasets.
+---
+layout: post
+title: A brief introduction of t-statistics and F statistics.
+---
+In this post we will discuss about t-statistics, F statistics and their role in the linear regression model. 
 I. Theory
 Before we discuss about theory of t-statistics and F statistics, we will learn about some basic definations first. 
-(a)	Hypothesis
+(a) Hypothesis
 The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a specualtion without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
 Null hypothesis is the hypothesis which claims that there is no statistical significance between predictors and response (or there is no correlation between two variables, the change in value of this variable does not affect the other).	 
 
