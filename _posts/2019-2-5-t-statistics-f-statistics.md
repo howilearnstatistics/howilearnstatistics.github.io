@@ -11,7 +11,7 @@ Null hypothesis is the hypothesis which claims that there is no statistical sign
 
 ![alt text][logo]
 
-[logo]:howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png"Graph"
+[logo]:https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png"Graph"
 
 Let take an example with the Boston dataset, we make a plot between two variables “dis” and “medv”, the dot scatter all over the place is a good indication that there is no correlation between variable “medv” and variable “dis”, but to confidently reject null hypothesis we must conduct specific tests which will be discussed in another part of this post. 
 
