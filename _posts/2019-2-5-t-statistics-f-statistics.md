@@ -11,8 +11,7 @@ Before we discuss about theory of t-statistics and F statistics, we will learn a
 The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a specualtion without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
 Null hypothesis is the hypothesis which claims that there is no statistical significance between predictors and response (or there is no correlation between two variables, the change in value of this variable does not affect the other).	
 
-Inline-style: 
-![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png"Graph")
+![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png "Graph")
 
 Let take an example with the Boston dataset, we make a plot between two variables “dis” and “medv”, the dot scatter all over the place is a good indication that there is no correlation between variable “medv” and variable “dis”, but to confidently reject null hypothesis we must conduct specific tests which will be discussed in another part of this post. 
 
