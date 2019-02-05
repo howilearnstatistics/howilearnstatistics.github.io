@@ -8,10 +8,12 @@ In this example we will apply what we have learnt about linear regression to an 
 **I. Data Preparation**
 
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
-  `R
+
+`
 > Library(MASS)
 > Boston
 `
+
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
 ```R
 > names(Boston)
