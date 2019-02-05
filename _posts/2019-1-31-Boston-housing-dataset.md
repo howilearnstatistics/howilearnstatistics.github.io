@@ -153,3 +153,7 @@ But the thing is, **THE WHOLE PROCESS MENTIONED ABOVE IS UTTERLY WRONG**. This p
 > 10. It uses a lot of paper.
 
 Generally, selecting variables for linear regression is a debatable topic. There are many methods for variable selecting, namely, forward stepwise selection, backward stepwise selection, etc, some are valid, some are heavily criticized. I recommend [this document](https://www.stat.cmu.edu/~cshalizi/mreg/15/lectures/26/lecture-26.pdf) and Gung's [comment](https://stats.stackexchange.com/questions/20836/algorithms-for-automatic-model-selection/20856#20856) if you want to learn more about variable selection process.       
+
+If our goal is prediction, it is safer to include all predictors in our model, removing variables without knowing the science behind it usually does more harm than good. 
+
+We begin to create our multiple linear regression model
