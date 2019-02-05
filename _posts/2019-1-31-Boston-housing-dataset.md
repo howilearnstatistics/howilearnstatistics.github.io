@@ -52,6 +52,11 @@ Our aim is to predict house value in Boston. Before we begin to do any analysis,
 ```R
 any(is.na(Boston))  
 ``` 
+
+```R
+[1] False
+```
+
 The function ```any(is.na())``` will return TRUE if there is missing value in our dataset. in this case, the function returned ```FALSE```. This is good, no missing value, we begin our analysis by splitting the dataset into two parts, training set and testing set, in this example we will randomly take 75% row in the Boston dataset and put it into the training set, and other 25% row in the testing set:
 ```R
 data(Boston)
