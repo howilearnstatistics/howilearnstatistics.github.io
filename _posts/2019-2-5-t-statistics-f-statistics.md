@@ -50,9 +50,9 @@ Now we consider a more complex case, multiple linear regression. In mutiple line
 
 >β1 = β2 = . . . = βp = 0
 
-Which means there is no assosication between predictors and reponse. Alternative hypothesis will be defined as:
+Which means there is no assosication between predictors and response. Alternative hypothesis will be defined as:
 
->∃βi (i ∈ [ 1, p]): βi≠0
+>∃βi (i∈[1, p]): βi≠0
 
 To reject null hypothesis in multiple linear regression, we conduct F test, which is a procedure described as below:
 First we calculate F ratio:
