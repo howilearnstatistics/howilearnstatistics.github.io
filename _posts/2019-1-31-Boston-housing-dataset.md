@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Boston Housing Dataset, A Simple One Variable Linear Regression Model 
+title: Practicing Linear Regression With Boston Housing Dataset
 ---
 
 In this example we will apply what we have learnt about linear regression to an old-but-famous dataset: Boston housing. In this example we asume that you are already familiar with basic operations and functions in R, as well as basic knowledge in linear regression, though weird functions will be explained throughoutly.
