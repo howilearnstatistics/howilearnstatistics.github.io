@@ -1,12 +1,12 @@
 ---
 layout: post
-title: A brief introduction of t-statistics and F statistics.
+title: A brief introduction of t-test and F test.
 ---
-In this post we will discuss about t-statistics, F statistics and their role in the linear regression model. Before we discuss about theory of t-statistics and F statistics, we will learn about some basic definations first. 
+In this post we will discuss about t-test, F test and their applications in linear regression models. Before we discuss about theory of t-test and F test, we will learn about some basic definations first. 
 
-I. **Hypothesis**
+**I. Hypothesis**
 
-The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a specualtion without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
+The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a speculation without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
 Null hypothesis is the hypothesis which claims that there is no statistical significance between predictors and response (or there is no correlation between two variables, the change in value of this variable does not affect the other).	
 
 ![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png "Graph")
@@ -72,3 +72,5 @@ Where:
 
 However, some of you will wonder that why do we need to conduct the F test? Can’t we just compute t value, derive p-value for each invidual predictor, and if one of the p-value is small enough, we can safely reject the null hypothesis? 
 Unfortunately, that logic is flawed, especially in cases where there is a large number of predictor. For example, in a dataset we have 100 predictors with H0 being right, we will observe that approximately 5% of the p-value associated with each predictor is below 5%, in fact, we are guranteed that there will be a p-value that is below 5% even when the null hypothesis is correct. (You can read the proof in [here](https://stats.stackexchange.com/questions/152805/difference-between-f-test-and-separate-t-tests-on-each-variable)) 
+
+**III. Conclusion
