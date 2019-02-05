@@ -5,6 +5,8 @@ title: Boston Housing Dataset, A Simple One Variable Linear Regression Model
 
 In this example we will apply what we have learnt about linear regression to an old-but-famous dataset: Boston housing. In this example we asume that you are already familiar with basic operations and functions in R, as well as basic knowledge in linear regression, though weird functions will be explained throughoutly.
 
+**I. Data Preparation**
+
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
   ```R
 > Library(MASS)
@@ -69,6 +71,8 @@ The function ```any(is.na())``` will return TRUE if there is missing value in ou
 ``` 
 ```set.seed()``` is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
 
+**II. Simple Linear Regression With One Variable**
+
 Now we have our training set and testing set, let take a look at the correlation between variables in the training set, we do so by constructing a correlation matrix of the training set:
 ```R
 > library(corrplot)
@@ -124,5 +128,7 @@ Let also plot our model:
 
 [logo3]: http://howilearnstatistics.github.io/images/boston-housing-dataset-3.png "lm.fit graph"
 
-```rmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next example we will learn how to select variables that best fit our model.
+```rmse()``` function in Metrics library will compute root mean square error between actual values and predicted values, accroding to this our model has rmse about 6.06, which is good but it could be better if we add other variables to our model. In the next chapter we will practice linear regression model with multiple variables. 
+
+**III. Multiple Linear Regression
 
