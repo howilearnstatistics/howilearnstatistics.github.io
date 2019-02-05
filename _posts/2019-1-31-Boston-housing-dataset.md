@@ -133,23 +133,23 @@ Let also plot our model:
 
 In the previous chapter we noticed that we can use correlation matrix to select best variable for our simple model. From that correlation matrix, some of us can deduce that selecting variables for multiple linear regression model can be simple as this:
 
-1. Calculate the correlation matrix of all the predictors
-2. Pick the predictor that have a low correlation to each other (to avoid collinearity)
-3. Remove the factors that have a low t-stat
-4. Add other factors (still based on the low correlation factor found in 2.).
-5. Reiterate several times until some criterion (e.g p-value) is over a certain threshold or cannot or we can't find a larger value.
+> 1. Calculate the correlation matrix of all the predictors
+> 2. Pick the predictor that have a low correlation to each other (to avoid collinearity)
+> 3. Remove the factors that have a low t-stat
+> 4. Add other factors (still based on the low correlation factor found in 2.).
+> 5. Reiterate several times until some criterion (e.g p-value) is over a certain threshold or cannot or we can't find a larger value.
 
 But the thing is, **THE WHOLE PROCESS MENTIONED ABOVE IS UTTERLY WRONG**. This process is nothing more than p-value hacking. Gung from stackexchange has a very good and detailed [explaination](https://stats.stackexchange.com/questions/20836/algorithms-for-automatic-model-selection/20856#20856) why this approach is wrong. I will quote his major points in here.
 
->> 1. It yields R-squared values that are badly biased to be high.
->> 2. The F and chi-squared tests quoted next to each variable on the printout do not have the claimed distribution.
->> 3. The method yields confidence intervals for effects and predicted values that are falsely narrow; see Altman and Andersen (1989).
->> 4. It yields p-values that do not have the proper meaning, and the proper correction for them is a difficult problem.
->> 5. It gives biased regression coefficients that need shrinkage (the coefficients for remaining variables are too large; see Tibshirani [1996]).
->> 6.It has severe problems in the presence of collinearity.
->> 7. It is based on methods (e.g., F tests for nested models) that were intended to be used to test prespecified hypotheses.
->> 8. Increasing the sample size does not help very much; see Derksen and Keselman (1992).
->> 9. It allows us to not think about the problem.
->> 10. It uses a lot of paper.
+> 1. It yields R-squared values that are badly biased to be high.
+> 2. The F and chi-squared tests quoted next to each variable on the printout do not have the claimed distribution.
+> 3. The method yields confidence intervals for effects and predicted values that are falsely narrow; see Altman and Andersen (1989).
+> 4. It yields p-values that do not have the proper meaning, and the proper correction for them is a difficult problem.
+> 5. It gives biased regression coefficients that need shrinkage (the coefficients for remaining variables are too large; see Tibshirani [1996]).
+> 6.It has severe problems in the presence of collinearity.
+> 7. It is based on methods (e.g., F tests for nested models) that were intended to be used to test prespecified hypotheses.
+> 8. Increasing the sample size does not help very much; see Derksen and Keselman (1992).
+> 9. It allows us to not think about the problem.
+> 10. It uses a lot of paper.
 
-Generally,
+Generally, selecting variables for linear regression is a debatable topic. There are many methods for variable selecting, namely, forward stepwise selection, backward stepwise selection, etc, some are valid, some are heavily criticized. I recommend [this document](https://www.stat.cmu.edu/~cshalizi/mreg/15/lectures/26/lecture-26.pdf) and Gung's[comment](https://stats.stackexchange.com/questions/20836/algorithms-for-automatic-model-selection/20856#20856) if you want to learn more about variable selection process.       
