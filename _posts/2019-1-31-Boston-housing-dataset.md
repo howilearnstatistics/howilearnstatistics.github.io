@@ -9,7 +9,7 @@ In this example we will apply what we have learnt about linear regression to an 
 
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
 
-```
+```R
 Library(MASS)
 Boston
 ```
@@ -160,7 +160,42 @@ If our goal is prediction, it is safer to include all predictors in our model, r
 
 We begin to create our multiple linear regression model:
 
+```R
+lm.fit_1=lm(medv~.,data=train)
+summary(lm.fit_1)
 ```
-lm.fit=lm(medv~.,data=Boston)
-summary
+
+```R
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  38.975228   5.919955   6.584 1.60e-10 ***
+crim         -0.088038   0.038531  -2.285  0.02289 *  
+zn            0.045900   0.015886   2.889  0.00409 ** 
+indus         0.009660   0.073066   0.132  0.89490    
+chas          3.394089   0.976352   3.476  0.00057 ***
+nox         -20.967438   4.455762  -4.706 3.60e-06 ***
+rm            3.770950   0.486516   7.751 9.15e-14 ***
+age           0.012070   0.015423   0.783  0.43434    
+dis          -1.449820   0.230775  -6.282 9.49e-10 ***
+rad           0.338458   0.080842   4.187 3.55e-05 ***
+tax          -0.013673   0.004565  -2.995  0.00293 ** 
+ptratio      -0.966877   0.154136  -6.273 1.00e-09 ***
+black         0.007668   0.003171   2.418  0.01608 *  
+lstat        -0.545934   0.058570  -9.321  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.79 on 365 degrees of freedom
+Multiple R-squared:  0.7516,	Adjusted R-squared:  0.7428 
+F-statistic: 84.96 on 13 and 365 DF,  p-value: < 2.2e-16
+```
+Finally we test our model on test dataset:
+
+```R
+evaluate_1 = predict(lm.fit_1,data=test)
+rmse(evaluate_1,test[,14 ])
+```
+
+```R
+[1] 4.682346
 ```
