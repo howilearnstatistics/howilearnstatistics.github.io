@@ -32,7 +32,10 @@ We first need to define null hypothesis. In majority of the case, null hypothesi
 β1 = 0
 -> Y = β0
 ```
-Which is an equation for a horizontal line. Suppose that from the data we have a β1 which is slightly different from 0:
+
+![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-2.png "Graph 2")
+
+Which is an equation for a horizontal line. But most of the time from real life problem we will have β1 that is slightly different from 0:
 ```
 |β1 – 0| > 0
 ```
