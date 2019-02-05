@@ -11,9 +11,8 @@ Before we discuss about theory of t-statistics and F statistics, we will learn a
 The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a specualtion without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
 Null hypothesis is the hypothesis which claims that there is no statistical significance between predictors and response (or there is no correlation between two variables, the change in value of this variable does not affect the other).	
 
-![alt text][logo]
-
-[logo]:https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png"Graph"
+Inline-style: 
+![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-1.png"Graph")
 
 Let take an example with the Boston dataset, we make a plot between two variables “dis” and “medv”, the dot scatter all over the place is a good indication that there is no correlation between variable “medv” and variable “dis”, but to confidently reject null hypothesis we must conduct specific tests which will be discussed in another part of this post. 
 
@@ -57,12 +56,12 @@ F = (Explained Variance)/(Unexplained Variance) = ((TSS-RSS)/p)/(RSS/(n-p-1))
 Then we find confidence interval I for (DFM, DFE) degrees of freedom using an F-table or statistical software. Finally, we accept the null hypothesis if F ∈ I; reject it if F ∉ I.
 
 Where:
-RSS = ∑(yi − ŷ)2  is the sum of squared residuals
-TSS = ∑(yi − ȳ)2 is the total sum of square
-n is the number of data point
-p is the number of predictor 	
-DFM = p – 1 is the corrected degrees of freedom for model
-DFE = n – p is degrees of freedom for error
+RSS = ∑(yi − ŷ)2  is the sum of squared residuals.
+TSS = ∑(yi − ȳ)2 is the total sum of square.
+n is the number of data point.
+p is the number of predictor.
+DFM = p – 1 is the corrected degrees of freedom for model.
+DFE = n – p is degrees of freedom for error.
 
 However, some of you will wonder that why do we need to conduct the F test? Can’t we just compute t value, derive p-value for each invidual predictor, and if one of the p-value is small enough, we can safely reject the null hypothesis? 
 Unfortunately, that logic is flawed, especially in cases where there is a large number of predictor. For example, in a dataset we have 100 predictors with H0 being right, we will observe that approximately 5% of the p-value associated with each predictor is below 5%, in fact, we are guranteed that there will be a p-value that is below 5% even when the null hypothesis is correct. (You can read the proof in [here](https://stats.stackexchange.com/questions/152805/difference-between-f-test-and-separate-t-tests-on-each-variable)) 
