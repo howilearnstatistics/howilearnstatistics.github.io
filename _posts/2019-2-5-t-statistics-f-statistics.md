@@ -18,22 +18,36 @@ As we known, usually a linear regression model will have the form:
 Y = β0 + β1X1 + β2X2 + . . . + βpXp
 ```
 With β1, β2, . . ., βp being slope coefficient. Consider a one-variable linear regression model, it will have the form:
+```
 y = β0 + β1X1
+```
 We first need to define null hypothesis. In majority of the case, null hypothesis is defined as the slope coefficient of our model equal to zero, that means:
+```
 β1 = 0
-	Y = β0
+-> Y = β0
+```
 Which is an equation for a horizontal line. Suppose that from the data we have a β1 which is slightly different from 0:
+```
 |β1 – 0| > 0
+```
 Now we wonder whether this discrepancy is because of random chance or the null hypothesis being wrong. To confidently answer this question, we conduct t-test. First we compute the t ratio:
-t=  (β1-0 )/(SE(β1))
+```
+t=  (β1-0)/(SE(β1))
+```
 With the SE(β1) being the standard error of β1. Next, the number of degrees of freedom (df) equals the number of data points minus the number of parameters fit by the regression. With t and df, we can compute p-value. We then interpret the p-value as following: if we see a small p-value, we can infer that there is association between predictor and response, that means we can reject the null hypothesis. The typical p-value cutoffs for rejecting null hypothesis are 5% or 1%.
 Now we consider a more complex case, multiple linear regression. In mutiple linear regression, null hypothesis will be defined as:
+```
 β1 = β2 = . . . = βp = 0
+```
 Which means there is no assosication between predictors and reponse. Alternative hypothesis will be defined as:
+```
 ∃βi (i ∈ [ 1, p]): βi≠0
+```
 To reject null hypothesis in multiple linear regression, we conduct F test, which is a procedure described as below:
 First we calculate F ratio:
-F=  (Explained Variance)/(Unexplained Variance)=  ((TSS-RSS)/p)/(RSS/(n-p-1))
+```
+F=  (Explained Variance)/(Unexplained Variance) = ((TSS-RSS)/p)/(RSS/(n-p-1))
+```
 Then we find confidence interval I for (DFM, DFE) degrees of freedom using an F-table or statistical software. Finally, we accept the null hypothesis if F ∈ I; reject it if F ∉ I.
 Where:
 RSS = ∑(yi − ŷ)2  is the sum of squared residuals
