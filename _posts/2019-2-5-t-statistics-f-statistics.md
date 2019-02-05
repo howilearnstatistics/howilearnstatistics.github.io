@@ -77,7 +77,7 @@ Unfortunately, that logic is flawed, especially in cases where there is a large 
 
 Now we know about the theory of t-test, F test and their application in linear regression. t-test gives us t-value and p-value, which tell us whether there is correlation between two variables or not. On the other hand, F test gives us a bigger picture, F test helps us to test null hypothesis when there are multiple variables involved.
 
-t-test and F test serve different purpose and they are not comparable. In complex dataset, we must conduct both test so we can firmly conclude relationships between variables. Lucky for us, we don't have to do these tests by hand because R will compute these values for us. However, understanding the fundamental theory behind it will tremendously help us to avoide committing fallacy when doing data analysis.      
+t-test and F test serve different purposes and they are not comparable. In complex dataset, we must conduct both tests so we can firmly conclude relationships between variables. Lucky for us, we don't have to do these tests by hand because R will compute these values for us. However, understanding the fundamental theory behind it will tremendously help us to avoid committing fallacy when doing data analysis.      
 
 ![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-3.png "Graph 3")
 
