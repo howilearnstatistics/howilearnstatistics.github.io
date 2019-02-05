@@ -2,12 +2,9 @@
 layout: post
 title: A brief introduction of t-statistics and F statistics.
 ---
-In this post we will discuss about t-statistics, F statistics and their role in the linear regression model. 
+In this post we will discuss about t-statistics, F statistics and their role in the linear regression model. Before we discuss about theory of t-statistics and F statistics, we will learn about some basic definations first. 
 
-I. Theory
-Before we discuss about theory of t-statistics and F statistics, we will learn about some basic definations first. 
-
-(a) Hypothesis
+I. **Hypothesis**
 
 The first defination we would want to know about is “Hypothesis”. Hypothesis is a fancy word for “guessing”. We make a specualtion without much evidence to back it up, that is why to prove a hypothesis, we will have to conduct tests and experiments. In statistics we have two kinds of hypothesis, null hypothesis (H0) and alternative hypothesis (Ha).
 Null hypothesis is the hypothesis which claims that there is no statistical significance between predictors and response (or there is no correlation between two variables, the change in value of this variable does not affect the other).	
@@ -18,7 +15,9 @@ Let take an example with the Boston dataset, we make a plot between two variable
 
 The second type of hypothesis is the alternative hypothesis. Alternative hypothesis is simply the inverse, or opposite of the null hypothesis. It is the hypothesis which claims that there is statistical significance between predictors and response (which indicates the change in a variable influences the change in another variable). To prove alternative hypothesis, we simply just need to reject null hypothesis.
 
-(b) Hypothesis testing
+**II. Hypothesis testing**
+
+**a. t-test**
 
 As we known, usually a linear regression model will have the form:
 ```
@@ -42,6 +41,8 @@ Now we wonder whether this discrepancy is because of random chance or the null h
 t = (β1-0)/(SE(β1))
 ```
 With the SE(β1) being the standard error of β1. Next, the number of degrees of freedom (df) equals the number of data points minus the number of parameters fit by the regression. With t and df, we can compute p-value. We then interpret the p-value as following: if we see a small p-value, we can infer that there is association between predictor and response, that means we can reject the null hypothesis. The typical p-value cutoffs for rejecting null hypothesis are 5% or 1%.
+
+**b. F test**
 
 Now we consider a more complex case, multiple linear regression. In mutiple linear regression, null hypothesis will be defined as:
 ```
