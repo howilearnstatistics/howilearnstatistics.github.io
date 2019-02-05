@@ -59,12 +59,12 @@ Then we find confidence interval I for (DFM, DFE) degrees of freedom using an F-
 
 Where:
 
-⋅⋅* RSS = ∑(yi − ŷ)2  is the sum of squared residuals.
-⋅⋅* TSS = ∑(yi − ȳ)2 is the total sum of square.
-⋅⋅* n is the number of data point.
-⋅⋅* p is the number of predictor.
-⋅⋅* DFM = p – 1 is the corrected degrees of freedom for model.
-⋅⋅* DFE = n – p is degrees of freedom for error.
+* RSS = ∑(yi − ŷ)2  is the sum of squared residuals.
+* TSS = ∑(yi − ȳ)2 is the total sum of square.
+* n is the number of data point.
+* p is the number of predictor.
+* DFM = p – 1 is the corrected degrees of freedom for model.
+* DFE = n – p is degrees of freedom for error.
 
 However, some of you will wonder that why do we need to conduct the F test? Can’t we just compute t value, derive p-value for each invidual predictor, and if one of the p-value is small enough, we can safely reject the null hypothesis? 
 Unfortunately, that logic is flawed, especially in cases where there is a large number of predictor. For example, in a dataset we have 100 predictors with H0 being right, we will observe that approximately 5% of the p-value associated with each predictor is below 5%, in fact, we are guranteed that there will be a p-value that is below 5% even when the null hypothesis is correct. (You can read the proof in [here](https://stats.stackexchange.com/questions/152805/difference-between-f-test-and-separate-t-tests-on-each-variable)) 
