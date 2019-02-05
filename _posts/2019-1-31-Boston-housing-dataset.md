@@ -15,11 +15,12 @@ Boston
 {% endhighlight %}
 
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
-```R
+{% highlight R %}
 names(Boston)
 summary(Boston)
-```
-```
+{% endhighlight %}
+
+{% highlight R %}
  [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"     "dis"     "rad"    
 [10] "tax"     "ptratio" "black"   "lstat"   "medv"
   crim                zn             indus            chas              nox        
@@ -43,11 +44,13 @@ summary(Boston)
  Mean   :356.67   Mean   :12.65   Mean   :22.53  
  3rd Qu.:396.23   3rd Qu.:16.95   3rd Qu.:25.00  
  Max.   :396.90   Max.   :37.97   Max.   :50.00  
-```
+{% endhighlight %}
+
 As we can see, there are 14 columns, that means there are 13 predictors we can use to train our model. To get familiar with descriptions of these predictors, we use:
-```R
+
+{% highlight %}
 ?Boston        
-``` 
+{% endhighlight %} 
 Our aim is to predict house value in Boston. Before we begin to do any analysis, we should always check whether the dataset has missing value or not, we do so by typing:
 ```R
 any(is.na(Boston))  
