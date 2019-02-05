@@ -10,14 +10,14 @@ In this example we will apply what we have learnt about linear regression to an 
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
 
 ```
-> Library(MASS)
-> Boston
+Library(MASS)
+Boston
 ```
 
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
 ```R
-> names(Boston)
-> summary(Boston)
+names(Boston)
+summary(Boston)
 ```
 ```
  [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"     "dis"     "rad"    
@@ -46,28 +46,28 @@ Then we call ```names()``` and ```summary()```  function so we can access names 
 ```
 As we can see, there are 14 columns, that means there are 13 predictors we can use to train our model. To get familiar with descriptions of these predictors, we use:
 ```R
-> ?Boston        
+?Boston        
 ``` 
 Our aim is to predict house value in Boston. Before we begin to do any analysis, we should always check whether the dataset has missing value or not, we do so by typing:
 ```R
-> any(is.na(Boston))  
+any(is.na(Boston))  
 ``` 
 The function ```any(is.na())``` will return TRUE if there is missing value in our dataset. in this case, the function returned ```FALSE```. This is good, no missing value, we begin our analysis by splitting the dataset into two parts, training set and testing set, in this example we will randomly take 75% row in the Boston dataset and put it into the training set, and other 25% row in the testing set:
 ```R
-> data(Boston)
-> smp_size<-floor(0.75*nrow(Boston))
-> set.seed(12)
-> train_ind<-sample(seq_len(nrow(Boston)), size=smp_size)
-> train<-Boston[train_ind, ]
-> test<-Boston[-train_ind, ]
+data(Boston)
+smp_size<-floor(0.75*nrow(Boston))
+set.seed(12)
+train_ind<-sample(seq_len(nrow(Boston)), size=smp_size)
+train<-Boston[train_ind, ]
+test<-Boston[-train_ind, ]
 ``` 
 ```floor()``` is used to return the largest integer value which is not greater than an individual number, or expression. For example:
 ```R
-> floor(3.3)
+floor(3.3)
 [1] 3
-> floor(22.7)
+floor(22.7)
 [1] 22
-> floor(-4.3)
+floor(-4.3)
 [1] -5
 ``` 
 ```set.seed()``` is used to set the seed of R’s random number generator, this function is used so results from this example can be recreated easily. 
@@ -76,9 +76,9 @@ The function ```any(is.na())``` will return TRUE if there is missing value in ou
 
 Now we have our training set and testing set, let take a look at the correlation between variables in the training set, we do so by constructing a correlation matrix of the training set:
 ```R
-> library(corrplot)
-> cor_matrix<-cor(train)
-> corrplot(cor_matrix, method=”number”)
+library(corrplot)
+cor_matrix<-cor(train)
+corrplot(cor_matrix, method=”number”)
 ``` 
 ![alt text][logo]
 
@@ -86,7 +86,7 @@ Now we have our training set and testing set, let take a look at the correlation
 
 ```corrplot()``` function will create correltion matrix out of the training dataset. Let take a look at the correlation matrix graph, the closer the value is to 1 (or -1), the stronger the correlation would be between two variables. We can notice that lstat is the variable that has strongest influence on our medv, that’s why we select lstat as the variable for our simple linear regression. We can also plot our variables to visualize our problem:
 ```
-> plot(lstat,medv)
+plot(lstat,medv)
 ```
 ![alt text][logo2]
 
@@ -94,11 +94,11 @@ Now we have our training set and testing set, let take a look at the correlation
 
 We begin to create our linear regression model:
 ```R
-> lm.fit=lm(lstat,data=train)
+lm.fit=lm(lstat,data=train)
 ``` 
 Let take a look at our model:
 ```R
-> summary(lm.fit)
+summary(lm.fit)
 ``` 
 We will have output:
 ```R
@@ -115,15 +115,15 @@ F-statistic:   480 on 1 and 377 DF,  p-value: < 2.2e-16
 ``` 
 Looks like root mean squared error (rmse) of our model is 6.273 on the training set, but that is not what we care about, what we care about is the rsme of our model on the test set:
 ```R
-> require(Metrics)
-> evaluate<-predict(lm.fit, test) 
-> rsme(evaluate,test[,14 ])
+require(Metrics)
+evaluate<-predict(lm.fit, test) 
+rsme(evaluate,test[,14 ])
 [1] 6.064169
 ``` 
 Let also plot our model:
 ```R
-> plot(lstat,medv)
-> abline(lm.fit)
+plot(lstat,medv)
+abline(lm.fit)
 ```
 ![alt text][logo3]
 
@@ -160,6 +160,7 @@ If our goal is prediction, it is safer to include all predictors in our model, r
 
 We begin to create our multiple linear regression model:
 
-`
-a
-`
+```
+lm.fit=lm(medv~.,data=Boston)
+summary
+```
