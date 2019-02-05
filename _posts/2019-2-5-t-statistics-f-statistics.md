@@ -18,7 +18,7 @@ Let take an example with the Boston dataset, we make a plot between two variable
 
 The second type of hypothesis is the alternative hypothesis. Alternative hypothesis is simply the inverse, or opposite of the null hypothesis. It is the hypothesis which claims that there is statistical significance between predictors and response (which indicates the change in a variable influences the change in another variable). To prove alternative hypothesis, we simply just need to reject null hypothesis.
 
-(b)Hypothesis testing
+(b) Hypothesis testing
 
 As we known, usually a linear regression model will have the form:
 ```
@@ -42,6 +42,7 @@ Now we wonder whether this discrepancy is because of random chance or the null h
 t = (β1-0)/(SE(β1))
 ```
 With the SE(β1) being the standard error of β1. Next, the number of degrees of freedom (df) equals the number of data points minus the number of parameters fit by the regression. With t and df, we can compute p-value. We then interpret the p-value as following: if we see a small p-value, we can infer that there is association between predictor and response, that means we can reject the null hypothesis. The typical p-value cutoffs for rejecting null hypothesis are 5% or 1%.
+
 Now we consider a more complex case, multiple linear regression. In mutiple linear regression, null hypothesis will be defined as:
 ```
 β1 = β2 = . . . = βp = 0
