@@ -9,18 +9,19 @@ In this example we will apply what we have learnt about linear regression to an 
 
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
 
-{% highlight R %}
+```
 Library(MASS)
 Boston
-{% endhighlight %}
+```
 
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
-{% highlight R %}
+
+```
 names(Boston)
 summary(Boston)
-{% endhighlight %}
+```
 
-{% highlight R %}
+```
  [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"     "dis"     "rad"    
 [10] "tax"     "ptratio" "black"   "lstat"   "medv"
   crim                zn             indus            chas              nox        
@@ -44,24 +45,27 @@ summary(Boston)
  Mean   :356.67   Mean   :12.65   Mean   :22.53  
  3rd Qu.:396.23   3rd Qu.:16.95   3rd Qu.:25.00  
  Max.   :396.90   Max.   :37.97   Max.   :50.00  
-{% endhighlight %}
+```
 
 As we can see, there are 14 columns, that means there are 13 predictors we can use to train our model. To get familiar with descriptions of these predictors, we use:
 
-{% highlight %}
+```
 ?Boston        
-{% endhighlight %} 
+``` 
+
 Our aim is to predict house value in Boston. Before we begin to do any analysis, we should always check whether the dataset has missing value or not, we do so by typing:
-```R
+
+```
 any(is.na(Boston))  
 ``` 
 
-```R
+```
 [1] False
 ```
 
 The function ```any(is.na())``` will return TRUE if there is missing value in our dataset. in this case, the function returned ```FALSE```. This is good, no missing value, we begin our analysis by splitting the dataset into two parts, training set and testing set, in this example we will randomly take 75% row in the Boston dataset and put it into the training set, and other 25% row in the testing set:
-```R
+
+```
 data(Boston)
 smp_size<-floor(0.75*nrow(Boston))
 set.seed(12)
@@ -70,7 +74,7 @@ train<-Boston[train_ind, ]
 test<-Boston[-train_ind, ]
 ``` 
 ```floor()``` is used to return the largest integer value which is not greater than an individual number, or expression. For example:
-```R
+```
 floor(3.3)
 [1] 3
 floor(22.7)
@@ -83,7 +87,7 @@ floor(-4.3)
 **II. Simple Linear Regression With One Variable**
 
 Now we have our training set and testing set, let take a look at the correlation between variables in the training set, we do so by constructing a correlation matrix of the training set:
-```R
+```
 library(corrplot)
 cor_matrix<-cor(train)
 corrplot(cor_matrix, method=”number”)
@@ -101,15 +105,15 @@ plot(lstat,medv)
 [logo2]: http://howilearnstatistics.github.io/images/boston-housing-dataset-2.png "lstat-medv graph"
 
 We begin to create our linear regression model:
-```R
+```
 lm.fit=lm(lstat,data=train)
 ``` 
 Let take a look at our model:
-```R
+```
 summary(lm.fit)
 ``` 
 We will have output:
-```R
+```
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
 (Intercept) 35.00575    0.64405   54.35   <2e-16 ***
@@ -122,14 +126,14 @@ Multiple R-squared:  0.5601,	Adjusted R-squared:  0.5589
 F-statistic:   480 on 1 and 377 DF,  p-value: < 2.2e-16
 ``` 
 Looks like root mean squared error (rmse) of our model is 6.273 on the training set, but that is not what we care about, what we care about is the rsme of our model on the test set:
-```R
+```
 require(Metrics)
 evaluate<-predict(lm.fit, test) 
 rsme(evaluate,test[,14 ])
 [1] 6.064169
 ``` 
 Let also plot our model:
-```R
+```
 plot(lstat,medv)
 abline(lm.fit)
 ```
@@ -168,12 +172,12 @@ If our goal is prediction, it is safer to include all predictors in our model, r
 
 We begin to create our multiple linear regression model:
 
-```R
+```
 lm.fit_1=lm(medv~.,data=train)
 summary(lm.fit_1)
 ```
 
-```R
+```
 Coefficients:
               Estimate Std. Error t value Pr(>|t|)    
 (Intercept)  38.975228   5.919955   6.584 1.60e-10 ***
@@ -199,11 +203,11 @@ F-statistic: 84.96 on 13 and 365 DF,  p-value: < 2.2e-16
 ```
 Finally we test our model on test dataset:
 
-```R
+```
 evaluate_1 = predict(lm.fit_1,data=test)
 rmse(evaluate_1,test[,14 ])
 ```
 
-```R
+```
 [1] 4.682346
 ```
