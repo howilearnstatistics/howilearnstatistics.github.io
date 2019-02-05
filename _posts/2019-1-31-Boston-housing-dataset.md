@@ -3,15 +3,15 @@ layout: post
 title: Practicing Linear Regression With Boston Housing Dataset
 ---
 
-In this example we will apply what we have learnt about linear regression to an old-but-famous dataset: Boston housing. In this example we asume that you are already familiar with basic operations and functions in R, as well as basic knowledge in linear regression, though weird functions will be explained throughoutly.
+In this example we will apply what we have learnt about linear regression to an old-but-famous dataset: Boston housing. We assume that you are already familiar with basic R syntax, as well as basic knowledge in linear regression, though weird functions will be explained throughoutly.
 
 **I. Data Preparation**
 
 The Boston housing dataset is included in the MASS library in R. First let include MASS library and Boston dataset:
-  ```R
+  `R
 > Library(MASS)
 > Boston
-```
+`
 Then we call ```names()``` and ```summary()```  function so we can access names of columns and statistical summaries of the dataset:
 ```R
 > names(Boston)
@@ -156,4 +156,8 @@ Generally, selecting variables for linear regression is a debatable topic. There
 
 If our goal is prediction, it is safer to include all predictors in our model, removing variables without knowing the science behind it usually does more harm than good. 
 
-We begin to create our multiple linear regression model
+We begin to create our multiple linear regression model:
+
+`
+a
+`
