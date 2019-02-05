@@ -36,7 +36,7 @@ We first need to define null hypothesis. In majority of the case, null hypothesi
 
 Which is an equation for a horizontal line. But most of the time from real life problem we will have β1 that is slightly different from 0:
 
->|β1 – 0| > 0
+> |β1 – 0| > 0
 
 Now we wonder whether this discrepancy is because of random chance or the null hypothesis being wrong. To confidently answer this question, we conduct t-test. First we compute the t ratio:
  
