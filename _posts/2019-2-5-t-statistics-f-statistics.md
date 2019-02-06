@@ -71,13 +71,14 @@ Where:
 * DFE = n – p is degrees of freedom for error.
 
 However, some of you will wonder that why do we need to conduct the F test? Can’t we just compute t value, derive p-value for each invidual predictor, and if one of the p-value is small enough, we can safely reject the null hypothesis? 
+
 Unfortunately, that logic is flawed, especially in cases where there is a large number of predictor. For example, in a dataset we have 100 predictors with H0 being right, we will observe that approximately 5% of the p-value associated with each predictor is below 5%, in fact, we are guranteed that there will be a p-value that is below 5% even when the null hypothesis is correct. (You can read the proof in [here](https://stats.stackexchange.com/questions/152805/difference-between-f-test-and-separate-t-tests-on-each-variable)) 
 
 **III. Conclusion**
 
 Now we know about the theory of t-test, F test and their application in linear regression. t-test gives us t-value and p-value, which tell us whether there is correlation between two variables or not. On the other hand, F test gives us a bigger picture, F test helps us to test null hypothesis when there are multiple variables involved.
 
-t-test and F test serve different purposes and they are not comparable. In complex dataset, we must conduct both tests so we can firmly conclude relationships between variables. Lucky for us, we don't have to do these tests by hand because R will compute these values for us. However, understanding the fundamental theory behind it will tremendously help us to avoid committing fallacy when doing data analysis.      
+t-test and F test serve different purposes and they are not comparable to each other. In complex dataset, we must conduct both tests so we can firmly conclude relationships between variables. Lucky for us, we don't have to do these tests by hand because R will compute these values for us. However, understanding the fundamental theory behind it will tremendously help us to avoid committing fallacy when doing data analysis.      
 
 ![alt text](https://howilearnstatistics.github.io/images/optimization-in-linear-regression-3.png "Graph 3")
 
