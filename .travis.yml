@@ -13,5 +13,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_PAT
   on:
-    branch: source
-  target_branch: master
+  branch: master
+  target_branch: gh-pages
+
