@@ -7,11 +7,12 @@ branches:
 
 script:
   - Rscript -e 'servr:::knit_maybe(c(".", "_source", "_posts"), c(".", "_posts", "_posts"), "build.R", "jekyll")'
+  - Rscript knit.R
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_PAT
-  on:
-    branch: master
-  target_branch: gh-pages
+ on:
+    branch: source
+  target_branch: master
