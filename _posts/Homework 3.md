@@ -1,13 +1,6 @@
 ---
-title: "Data analysis with R, Boston housing dataset"
-author: "Nghia Le"
-date: "February 8, 2019"
-output:
-  html_document: default
-  pdf_document: default
-  word_document: default
-  md_document:
-    variant: markdown_github
+layout: post
+title: A brief introduction of t-test and F test.
 ---
 
 ### **I. Introduction**
